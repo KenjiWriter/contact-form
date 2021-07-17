@@ -12,6 +12,7 @@
         <legend>Contact form</legend>
         <div align='center'>
             <form action="{{ route('post') }}">
+                @csrf
                 <table>
                     <tr>
                         <td><label for="">*Your e-mail:</label> <input type="email" id="email" name="email" placeholder="mail@domian.com"></td>
@@ -35,10 +36,8 @@
                     <tr>
                         <td><textarea name="message" id="message" cols="30" rows="10"></textarea></td>
                     </tr>
-                    <tr>
-                    <td><input align="center" type="submit" value="Send"></td>
-                    </tr>
                 <table>
+                    <input align="center" type="submit" value="Send">
             </form>
         </div>
     </fieldset>
