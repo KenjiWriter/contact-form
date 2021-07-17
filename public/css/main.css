@@ -1,0 +1,25 @@
+body,
+textarea {
+    background-color: #f0f0;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+fieldset {
+    text-align: center;
+    margin: auto;
+    width: 400px;
+    border: 1px solid rgb(30, 10, 10);
+}
+
+input {
+    margin: .4rem;
+    border-radius: 5%;
+    border: 1px;
+    color: #000;
+    background-color: silver;
+}
