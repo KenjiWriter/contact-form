@@ -11,16 +11,15 @@
     <fieldset>
         <legend>Contact form</legend>
         <div align='center'>
-            {{$message ?? ''}}
             <form action="/store" method="POST">
                 @csrf
                 <table>
                     <tr>
-                        <td><label for="">*Your e-mail:</label> <input type="email" id="email" name="email" placeholder="mail@domian.com"></td>
+                        <td><label for="">*Your e-mail:</label>@error('email') <div style="color:red">{{$message}}</div> @enderror <input type="email" id="email" name="email" placeholder="mail@domian.com" value="{{ old('email') }}"></td>
                     </tr>
                     <tr>
-                        <td><label for="">(optional) First name:</label> <input type="email" id="email" name="email" placeholder="mail@domian.com"></td>
-                        <td><label for="">(optional) Last name:</label> <input type="email" id="email" name="email" placeholder="mail@domian.com"></td>
+                        <td><label for="">(optional) First name:</label><input type="text" id="f_name" name="f_name" placeholder="Your name" value="{{ old('f_name') }}"></td>
+                        <td><label for="">(optional) Last name:</label> <input type="text" id="l_name" name="l_name" placeholder="Your last name" value="{{ old('l_name') }}"></td>
                     </tr>
                     <tr>
                         <td><label for="">Priority:</label>
@@ -35,7 +34,7 @@
                         <td><label for="">Message:</label></td>
                     </tr>
                     <tr>
-                        <td><textarea name="message" id="message" cols="30" rows="10"></textarea></td>
+                        <td>@error('message') <div style="color:red">{{$message}}</div> @enderror<textarea name="message" id="message" cols="30" rows="10"></textarea></td>
                     </tr>
                 <table>
                     <input align="center" type="submit" value="Send">

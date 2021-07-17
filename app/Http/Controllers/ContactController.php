@@ -24,6 +24,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        return view('contact-form')->with('message' ,$request['message']);
+        $request->validate([
+            'email' => 'required|email',
+            'message' => 'required|max:500',
+        ]);
     }
 }
