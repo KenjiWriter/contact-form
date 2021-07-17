@@ -11,7 +11,8 @@
     <fieldset>
         <legend>Contact form</legend>
         <div align='center'>
-            <form action="{{ route('post') }}">
+            {{$message ?? ''}}
+            <form action="/store" method="POST">
                 @csrf
                 <table>
                     <tr>
