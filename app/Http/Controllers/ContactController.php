@@ -28,5 +28,16 @@ class ContactController extends Controller
             'email' => 'required|email',
             'message' => 'required|max:500',
         ]);
+
+        $data= [
+            'e-mail' => $request['email'],
+            'first_name' => $request['f_name'],
+            'last_name' => $request['l_name'],
+            'priority' => $request['priority'],
+            'message' => $request['message'],
+        ];
+
+        Contact::create($data);
+        return view(route('index'));
     }
 }
